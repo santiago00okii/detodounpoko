@@ -11,17 +11,17 @@
       padding: 40px;
       margin: 0;
       color: #333;
+      text-align: center;
     }
 
     header {
-      text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     header h1 {
       font-size: 2.6em;
       color: #0b3d91;
-      margin: 0;
+      margin: 0 0 10px 0;
     }
 
     .search-box {
@@ -48,6 +48,7 @@
       background-color: #0b3d91;
       color: white;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     .search-box button:hover {
@@ -56,7 +57,7 @@
 
     .fixed-link {
       max-width: 600px;
-      margin: 20px auto 40px auto;
+      margin: 20px auto;
       background: white;
       border-radius: 12px;
       padding: 25px;
@@ -90,6 +91,7 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       padding: 30px 25px;
       display: none;
+      text-align: left;
     }
 
     .results h2 {
@@ -103,6 +105,8 @@
       font-weight: 600;
       font-size: 1.1em;
       text-decoration: none;
+      display: block;
+      margin-top: 12px;
     }
 
     .results a:hover {
@@ -111,8 +115,9 @@
 
     .results p {
       font-style: italic;
-      margin-top: 10px;
+      margin-top: 5px;
       color: #555;
+      margin-bottom: 20px;
     }
 
     footer {
@@ -145,27 +150,39 @@
     <button onclick="search()">Buscar</button>
   </div>
 
-  <!-- Siempre visible debajo del buscador -->
+  <!-- Primer enlace: Comentarios FIFA -->
   <div class="fixed-link">
-    <a href="https://cuty.io/Diaz" target="_blank">
-      Descargar comentarios de Fernando Palomo y Mario Alberto Kempes (Link acortado)
-    </a>
-    <p>Contraseña: <i>dana</i></p>
-  </div>
-
-  <!-- Resultado que aparece solo al buscar -->
-  <div class="results" id="resultsBox">
-    <h2>Latino aquí</h2>
     <a href="https://cuty.io/Diaz" target="_blank">
       Descargar comentarios de Fernando Palomo y Mario Alberto Kempes
     </a>
     <p>Contraseña: <i>dana</i></p>
   </div>
 
+  <!-- Segundo enlace: World Soccer Champs -->
+  <div class="fixed-link">
+    <a href="https://cuty.io/Diazz" target="_blank">
+      World Soccer Champs Licenciado 9.8.1
+    </a>
+    <p>Descarga esta increíble versión de WSC con equipos y jugadores reales</p>
+  </div>
+
+  <!-- Resultado que aparece al buscar -->
+  <div class="results" id="resultsBox">
+    <h2>Latino aquí</h2>
+    <a href="https://cuty.io/Diaz" target="_blank">
+      Descargar comentarios de Fernando Palomo y Mario Alberto Kempes
+    </a>
+    <p>Contraseña: <i>dana</i></p>
+    <a href="https://cuty.io/Diazz" target="_blank">
+      World Soccer Champs Licenciado 9.8.1
+    </a>
+    <p>Descarga esta increíble versión de WSC con equipos y jugadores reales</p>
+  </div>
+
   <footer>
     <p><strong>Redes Sociales</strong></p>
     <p>Tiktok: <a href="https://tiktok.com/@s4ntiii01811" target="_blank">@s4ntiii01811</a></p>
-    <p>YouTube: <i>En proceso</i></p>
+    <p>YouTube: <a href="https://www.youtube.com/@SantiFiles-w6v" target="_blank">SantiFiles</a></p>
   </footer>
 
   <script>
@@ -173,7 +190,12 @@
       const input = document.getElementById('searchInput').value.toLowerCase().trim();
       const results = document.getElementById('resultsBox');
 
-      if (input.includes("comentarios") || input.includes("latino")) {
+      if (
+        input.includes("comentarios") ||
+        input.includes("latino") ||
+        input === "ws" ||
+        input === "wsc"
+      ) {
         results.style.display = "block";
       } else {
         results.style.display = "none";

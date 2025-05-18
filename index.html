@@ -1,156 +1,204 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SantiFiles 🍀</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f3f3f3;
-        }
-        .loader-container {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
-        .loader {
-            color: white;
-            font-size: 32px;
-            animation: fadeOut 2s ease-in-out forwards;
-        }
-        @keyframes fadeOut {
-            0% {opacity: 1;}
-            100% {opacity: 0;}
-        }
-        .hidden { display: none; }
-        header {
-            background-color: #111;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 24px;
-        }
-        .search-container {
-            padding: 20px;
-            text-align: center;
-        }
-        .search-container input {
-            padding: 10px;
-            width: 80%;
-            max-width: 400px;
-            font-size: 16px;
-        }
-        .content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .item {
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        }
-        .item h3 {
-            margin: 0 0 5px 0;
-        }
-        .item p {
-            margin: 5px 0;
-        }
-        .download-button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #28a745;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .download-button:hover {
-            background-color: #218838;
-        }
-        .footer {
-            text-align: center;
-            font-size: 14px;
-            padding: 20px;
-            background-color: #111;
-            color: white;
-        }
-        .footer a {
-            color: #fff;
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>detodounpoco - SantiFiles 🍀</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f3f3f3;
+    }
+    .loader-container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .loader {
+      color: white;
+      font-size: 32px;
+      animation: fadeOut 2s ease-in-out forwards;
+    }
+    @keyframes fadeOut {
+      0% {opacity: 1;}
+      100% {opacity: 0;}
+    }
+    .hidden { display: none; }
+    header {
+      background-color: #111;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .search-container {
+      padding: 20px;
+      text-align: center;
+    }
+    .search-container input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      font-size: 16px;
+    }
+    .content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .item {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .info {
+      max-width: 60%;
+    }
+    .item h3 {
+      margin: 0 0 5px 0;
+    }
+    .item p {
+      margin: 5px 0;
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .download-button {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .download-button:hover {
+      background-color: #218838;
+    }
+    .tutorial-button {
+      padding: 10px 15px;
+      background-color: #dc3545;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .tutorial-button:hover {
+      background-color: #c82333;
+    }
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 20px;
+      background-color: #111;
+      color: white;
+    }
+    .footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
 <div class="loader-container" id="loader">
-    <div class="loader">Cargando SantiFiles 🍀...</div>
+  <div class="loader">Cargando SantiFiles 🍀...</div>
 </div>
 
 <header>detodounpoco</header>
 
 <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Buscar juegos, apps, WSC..." autocomplete="off" />
+  <input type="text" id="searchInput" placeholder="Buscar juegos, apps, wsc, ws, mobizen..." autocomplete="off" />
 </div>
 
 <div class="content" id="results">
-    <!-- Fifa Comentarios -->
-    <div class="item" data-tags="comentarios fifa fernando palomo mario quempes latino">
-        <h3>Latino - Comentarios FIFA 23</h3>
-        <p><em>Contraseña: dana</em></p>
-        <a href="https://cuty.io/Diaz" class="download-button" target="_blank" rel="noopener noreferrer">Descargar ahora</a>
+  <!-- Comentarios FIFA -->
+  <div class="item" data-tags="comentarios fifa fernando palomo mario quempes latino">
+    <div class="info">
+      <h3>Latino - Comentarios FIFA 23</h3>
+      <p><em>Contraseña: dana</em></p>
     </div>
-    <!-- World Soccer Champs -->
-    <div class="item" data-tags="world soccer champs wsc ws futbol">
-        <h3>World Soccer Champs 9.8.1</h3>
-        <p>Descarga esta increíble versión de WSC con equipos y jugadores reales</p>
-        <p><em>Contraseña: 105</em></p>
-        <a href="https://cuty.io/Diazz" class="download-button" target="_blank" rel="noopener noreferrer">Descargar ahora</a>
+    <div class="actions">
+      <a href="https://cuty.io/Diaz" target="_blank" rel="noopener noreferrer" class="download-button">Descargar ahora</a>
+      <a href="https://youtu.be/kHvqvBQHXNA?si=TpT_LLl9BG8X-xpF" target="_blank" rel="noopener noreferrer" class="tutorial-button">Tutorial</a>
     </div>
+  </div>
+
+  <!-- World Soccer Champs -->
+  <div class="item" data-tags="world soccer champs wsc ws futbol">
+    <div class="info">
+      <h3>World Soccer Champs 9.8.1</h3>
+      <p>Descarga esta increíble versión de WSC con equipos y jugadores reales</p>
+      <p><em>Contraseña: 105</em></p>
+    </div>
+    <div class="actions">
+      <a href="https://cuty.io/Diazz" target="_blank" rel="noopener noreferrer" class="download-button">Descargar ahora</a>
+      <a href="https://youtu.be/kHvqvBQHXNA?si=TpT_LLl9BG8X-xpF" target="_blank" rel="noopener noreferrer" class="tutorial-button">Tutorial</a>
+    </div>
+  </div>
+
+  <!-- Mobizen Premium -->
+  <div class="item" data-tags="mobizen grabador pantalla premium apk pro">
+    <div class="info">
+      <h3>Mobizen Premium</h3>
+      <p>Descarga este increíble grabador de pantalla con todas las funciones desbloqueadas</p>
+      <p><em>Contraseña: no se usa contraseña en este link</em></p>
+    </div>
+    <div class="actions">
+      <a href="https://www.mediafire.com/file/a51up5wp8l0ynjf/Mobizen_Pro_v3.10.5.2_-_espacioapk.com.apk/file" target="_blank" rel="noopener noreferrer" class="download-button">Descargar ahora</a>
+      <a href="https://youtu.be/kHvqvBQHXNA?si=TpT_LLl9BG8X-xpF" target="_blank" rel="noopener noreferrer" class="tutorial-button">Tutorial</a>
+    </div>
+  </div>
 </div>
 
+<!-- Footer -->
 <div class="footer">
-    Redes Sociales<br>
-    TikTok: <a href="https://tiktok.com/@s4ntiii01811" target="_blank" rel="noopener noreferrer">@s4ntiii01811</a><br>
-    YouTube: <a href="https://www.youtube.com/@SantiFiles-w6v" target="_blank" rel="noopener noreferrer">SantiFiles</a>
+  Redes Sociales<br>
+  TikTok: <a href="https://tiktok.com/@s4ntiii01811" target="_blank">@s4ntiii01811</a><br>
+  YouTube: <a href="https://www.youtube.com/@SantiFiles-w6v" target="_blank">SantiFiles</a>
 </div>
 
 <script>
-    // Ocultar loader luego de cargar
-    window.addEventListener("load", () => {
-        setTimeout(() => {
-            document.getElementById("loader").classList.add("hidden");
-        }, 2000);
-    });
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("loader").classList.add("hidden");
+    }, 2000);
+  });
 
-    // Buscador funcional
-    const searchInput = document.getElementById("searchInput");
-    const items = document.querySelectorAll(".item");
+  const searchInput = document.getElementById("searchInput");
+  const items = document.querySelectorAll(".item");
 
-    searchInput.addEventListener("input", () => {
-        const query = searchInput.value.toLowerCase().trim();
-        items.forEach(item => {
-            const tags = item.getAttribute("data-tags");
-            if(query === "") {
-                item.style.display = "block";
-            } else if (tags.includes(query)) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
-            }
-        });
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase().trim();
+    items.forEach(item => {
+      const tags = item.getAttribute("data-tags");
+      if(query === "") {
+        item.style.display = "flex";
+      } else if (tags.includes(query)) {
+        item.style.display = "flex";
+      } else {
+        item.style.display = "none";
+      }
     });
+  });
 </script>
 
 </body>

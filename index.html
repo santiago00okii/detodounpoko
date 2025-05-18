@@ -15,37 +15,18 @@
 
     header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     header h1 {
-      font-size: 2.8em;
+      font-size: 2.6em;
       color: #0b3d91;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .fixed-link {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .fixed-link a {
-      color: #1446a0;
-      font-weight: 600;
-      font-size: 1.2em;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-
-    .fixed-link a:hover {
-      border-color: #0b3d91;
+      margin: 0;
     }
 
     .search-box {
       max-width: 520px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 20px auto;
       display: flex;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       border-radius: 8px;
@@ -67,11 +48,38 @@
       background-color: #0b3d91;
       color: white;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
     .search-box button:hover {
       background-color: #064080;
+    }
+
+    .fixed-link {
+      max-width: 600px;
+      margin: 20px auto 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .fixed-link a {
+      color: #1446a0;
+      font-weight: 600;
+      font-size: 1.2em;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .fixed-link a:hover {
+      text-decoration: underline;
+    }
+
+    .fixed-link p {
+      font-style: italic;
+      color: #666;
     }
 
     .results {
@@ -82,43 +90,29 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       padding: 30px 25px;
       display: none;
-      flex-direction: column;
-      gap: 20px;
     }
 
-    .result-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .result-item h2 {
+    .results h2 {
+      margin-top: 0;
       color: #0b3d91;
-      margin: 0;
-      font-weight: 700;
-      font-size: 1.8em;
+      font-size: 1.6em;
     }
 
-    .result-item a {
-      text-decoration: none;
+    .results a {
       color: #1446a0;
       font-weight: 600;
       font-size: 1.1em;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease;
+      text-decoration: none;
     }
 
-    .result-item a:hover {
-      border-color: #0b3d91;
+    .results a:hover {
+      text-decoration: underline;
     }
 
-    .result-item p {
+    .results p {
       font-style: italic;
+      margin-top: 10px;
       color: #555;
-      font-size: 1em;
-      margin: 0;
-      white-space: nowrap;
     }
   </style>
 </head>
@@ -128,26 +122,26 @@
     <h1>detodounpoco</h1>
   </header>
 
-  <div class="fixed-link">
-    <a href="https://www.mediafire.com/file/d6hwbm6urg20fe8/latino_fifa_23.rar/file" target="_blank" rel="noopener noreferrer">
-      Descargar comentarios de Fernando Palomo y Mario Alberto Kempes (Mediafire)
-    </a>
-    <p><i>Contraseña: dana</i></p>
-  </div>
-
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Buscar..." />
     <button onclick="search()">Buscar</button>
   </div>
 
+  <!-- Siempre visible debajo del buscador -->
+  <div class="fixed-link">
+    <a href="https://cuty.io/Diaz" target="_blank">
+      Descargar comentarios de Fernando Palomo y Mario Alberto Kempes (Link acortado)
+    </a>
+    <p>Contraseña: <i>dana</i></p>
+  </div>
+
+  <!-- Resultado que aparece solo al buscar -->
   <div class="results" id="resultsBox">
-    <div class="result-item">
-      <h2>Latino aquí</h2>
-      <a href="https://www.mediafire.com/file/d6hwbm6urg20fe8/latino_fifa_23.rar/file" target="_blank" rel="noopener noreferrer">
-        Descargar comentarios de Fernando Palomo y Mario Alberto Kempes
-      </a>
-      <p>Contraseña: dana</p>
-    </div>
+    <h2>Latino aquí</h2>
+    <a href="https://cuty.io/Diaz" target="_blank">
+      Descargar comentarios de Fernando Palomo y Mario Alberto Kempes
+    </a>
+    <p>Contraseña: <i>dana</i></p>
   </div>
 
   <script>
@@ -156,7 +150,7 @@
       const results = document.getElementById('resultsBox');
 
       if (input.includes("comentarios") || input.includes("latino")) {
-        results.style.display = "flex";
+        results.style.display = "block";
       } else {
         results.style.display = "none";
       }

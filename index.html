@@ -1,128 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SantiFiles</title>
+  <meta charset="UTF-8">
+  <title>duo'noob.pro - Shaders recomendados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
       margin: 0;
-      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle, #101010, #1a1a1a);
+      color: #fff;
+      animation: smoothEnter 1.5s ease;
+    }
+    @keyframes smoothEnter {
+      0% { opacity: 0; transform: scale(0.95); filter: blur(6px); }
+      100% { opacity: 1; transform: scale(1); filter: blur(0); }
     }
     header {
-      background: #222;
-      color: white;
-      padding: 20px;
       text-align: center;
-      font-size: 28px;
+      padding: 40px 20px 20px;
     }
-    .search-container {
-      text-align: center;
-      margin: 20px;
+    h1 {
+      font-size: 3.2em;
+      color: #00eaff;
+      text-shadow: 2px 2px 5px #000;
     }
-    input[type="text"] {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    .social-icons {
+      margin-top: 10px;
     }
-    .card {
-      background: white;
-      margin: 20px auto;
+    .icon-btn {
+      width: 40px;
+      margin: 0 10px;
+      transition: transform 0.2s ease;
+    }
+    .icon-btn:hover {
+      transform: scale(1.15);
+    }
+    .shader-container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .shader-box {
+      background-color: #262626;
+      border-left: 5px solid #00c3ff;
+      border-radius: 8px;
       padding: 20px;
-      width: 90%;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      box-shadow: 0 0 12px #00000070;
+      transition: transform 0.2s ease;
     }
-    .title {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 5px;
+    .shader-box:hover {
+      transform: scale(1.03);
     }
-    .desc {
-      margin-bottom: 10px;
-    }
-    .password {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 10px;
-    }
-    .btn {
-      display: inline-block;
-      margin: 5px;
-      padding: 10px 20px;
-      background: #2d89ef;
-      color: white;
-      border: none;
-      border-radius: 5px;
+    .shader-box a {
+      color: #00c3ff;
       text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
     }
-    .btn.tutorial {
-      background: red;
+    .shader-box span {
+      display: block;
+      margin-top: 6px;
+      color: #ccc;
+      font-size: 0.95em;
     }
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-      margin: 30px 0;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2em;
+      }
+      .shader-box {
+        padding: 15px;
+      }
+      .icon-btn {
+        width: 30px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>SantiFiles</header>
+  <header>
+    <h1>duo'noob.pro</h1>
+    <div class="social-icons">
+      <a href="https://www.youtube.com/@duo-noobpro" target="_blank">
+        <img class="icon-btn" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Youtube%28amin%29.png" alt="YouTube">
+      </a>
+      <a href="https://www.tiktok.com/@duonoobpro" target="_blank">
+        <img class="icon-btn" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" alt="TikTok">
+      </a>
+    </div>
+  </header>
 
-  <div class="search-container">
-    <input type="text" id="search" placeholder="Buscar juegos o apps..." oninput="filtrar()"/>
+  <div class="shader-container">
+    <div class="shader-box">
+      <a href="https://www.mediafire.com/file/dowpjw2oetshldg/BSL_v10.0_%25281%2529.zip/file">1. BSL Shader [BS]</a>
+      <span>Iluminación avanzada, sombras suaves, ideal para Minecraft 1.21.1.</span>
+    </div>
+
+    <div class="shader-box">
+      <a href="https://www.mediafire.com/file/vm5vsggi5xvh5nm/§r§lAstra§4§lLex§r§l_By_LexBoosT_§4§lV93.0§r§l.zip/file">2. Astralex Shader</a>
+      <span>Estilo neón galáctico, ideal para builds futuristas. Compatible con 1.21.1.</span>
+    </div>
+
+    <div class="shader-box">
+      <a href="https://www.mediafire.com/file/flcxvde83bf08iz/Seraphic+Shaders.zip/file">3. Seraphic Shader</a>
+      <span>Ambiente cinematográfico, sombras suaves. Recomendado para 1.21.1.</span>
+    </div>
+
+    <div class="shader-box">
+      <a href="https://www.mediafire.com/file/tozqc52okkl2qvv/Oceano+Shaders+3.0.1.zip/file">4. Océano Realistas</a>
+      <span>Agua dinámica y reflejos profundos. Perfecto para mapas oceánicos en 1.21.1.</span>
+    </div>
+
+    <div class="shader-box">
+      <a href="https://www.mediafire.com/file/zs005pqqq48izv2/Insanity-Shader-Universal-v1.650.zip/file">5. Insnos Shader</a>
+      <span>Visual psicodélico con animaciones extremas. Compatible con 1.21.1.</span>
+    </div>
   </div>
-
-  <div id="contenido">
-    <div class="card" data-keywords="comentarios fifa palomo kempes">
-      <div class="title">Latino - Comentarios FIFA</div>
-      <div class="desc">Comentarios de Fernando Palomo y Mario Alberto Kempes</div>
-      <div class="password">Contraseña: dana</div>
-      <a class="btn" href="https://cuty.io/Diaz" target="_blank">Descargar ahora</a>
-      <a class="btn tutorial" href="https://youtu.be/kHvqvBQHXNA?si=TpT_LLl9BG8X-xpF" target="_blank">Tutorial</a>
-    </div>
-
-    <div class="card" data-keywords="ws wsc soccer champs futbol">
-      <div class="title">World Soccer Champs - Licenciado 9.8.1</div>
-      <div class="desc">Descarga esta increíble versión de WSC con equipos y jugadores reales</div>
-      <div class="password">Contraseña: 105</div>
-      <a class="btn" href="https://cuty.io/Diazz" target="_blank">Descargar ahora</a>
-      <a class="btn tutorial" href="https://youtu.be/kHvqvBQHXNA?si=TpT_LLl9BG8X-xpF" target="_blank">Tutorial</a>
-    </div>
-
-    <div class="card" data-keywords="mobizen grabador pantalla app premium">
-      <div class="title">Mobizen Premium</div>
-      <div class="desc">Descarga este increíble grabador de pantalla con todas las funciones desbloqueadas</div>
-      <div class="password">Contraseña: no se usa contraseña en este link</div>
-      <a class="btn" href="https://cuty.io/Diazzz" target="_blank">Descargar ahora</a>
-      <a class="btn tutorial" href="https://youtu.be/kHvqvBQHXNA?si=TpT_LLl9BG8X-xpF" target="_blank">Tutorial</a>
-    </div>
-  </div>
-
-  <footer>
-    <p>Redes Sociales</p>
-    <p>Tiktok: <a href="https://www.tiktok.com/@s4ntiii01811" target="_blank">@s4ntiii01811</a></p>
-    <p>YouTube: <a href="https://www.youtube.com/@SantiFiles-w6v" target="_blank">SantiFiles</a></p>
-  </footer>
-
-  <script>
-    function filtrar() {
-      const valor = document.getElementById('search').value.toLowerCase();
-      const tarjetas = document.querySelectorAll('.card');
-
-      tarjetas.forEach(card => {
-        const keywords = card.getAttribute('data-keywords');
-        card.style.display = keywords.includes(valor) ? 'block' : 'none';
-      });
-    }
-  </script>
 
 </body>
 </html>
